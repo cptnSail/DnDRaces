@@ -276,7 +276,8 @@ Makefile: ../DnDRacesInfo/DnDRacesInfo.pro ../../../5.15.2/mingw81_32/mkspecs/wi
 		../../../5.15.2/mingw81_32/lib/Qt5Gui.prl \
 		../../../5.15.2/mingw81_32/lib/Qt5Core.prl \
 		../../../5.15.2/mingw81_32/lib/qtmain.prl \
-		../../../5.15.2/mingw81_32/mkspecs/features/build_pass.prf
+		../../../5.15.2/mingw81_32/mkspecs/features/build_pass.prf \
+		../DnDRacesInfo/Source.qrc
 	$(QMAKE) -o Makefile ..\DnDRacesInfo\DnDRacesInfo.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 ../../../5.15.2/mingw81_32/mkspecs/features/spec_pre.prf:
 ../../../5.15.2/mingw81_32/mkspecs/qdevice.pri:
@@ -485,6 +486,7 @@ Makefile: ../DnDRacesInfo/DnDRacesInfo.pro ../../../5.15.2/mingw81_32/mkspecs/wi
 ../../../5.15.2/mingw81_32/lib/Qt5Core.prl:
 ../../../5.15.2/mingw81_32/lib/qtmain.prl:
 ../../../5.15.2/mingw81_32/mkspecs/features/build_pass.prf:
+../DnDRacesInfo/Source.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\DnDRacesInfo\DnDRacesInfo.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 

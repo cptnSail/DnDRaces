@@ -10,6 +10,7 @@
 #define UI_WIDGET_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
@@ -83,6 +84,9 @@ public:
         btnDwarf->setSizePolicy(sizePolicy);
         btnDwarf->setMinimumSize(QSize(200, 200));
         btnDwarf->setMaximumSize(QSize(200, 200));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/src/DwarfIcon.jpg"), QSize(), QIcon::Normal, QIcon::Off);
+        btnDwarf->setIcon(icon);
 
         verticalLayout->addWidget(btnDwarf);
 
@@ -268,22 +272,22 @@ public:
     {
         Widget->setWindowTitle(QCoreApplication::translate("Widget", "Widget", nullptr));
         label->setText(QCoreApplication::translate("Widget", "Races", nullptr));
-        btnDwarf->setText(QCoreApplication::translate("Widget", "Dwarf", nullptr));
+        btnDwarf->setText(QString());
         dwarf->setText(QCoreApplication::translate("Widget", "Dwarf", nullptr));
-        btnElf->setText(QCoreApplication::translate("Widget", "Elf", nullptr));
+        btnElf->setText(QString());
         elf->setText(QCoreApplication::translate("Widget", "Elf", nullptr));
-        btnHalfling->setText(QCoreApplication::translate("Widget", "Halfling", nullptr));
+        btnHalfling->setText(QString());
         halfling->setText(QCoreApplication::translate("Widget", "Halfling", nullptr));
-        btnHuman->setText(QCoreApplication::translate("Widget", "Human", nullptr));
+        btnHuman->setText(QString());
         human->setText(QCoreApplication::translate("Widget", "Human", nullptr));
         Icon->setText(QCoreApplication::translate("Widget", "Icon", nullptr));
-        btnGnome->setText(QCoreApplication::translate("Widget", "Gnome", nullptr));
+        btnGnome->setText(QString());
         gnome->setText(QCoreApplication::translate("Widget", "Gnome", nullptr));
-        btnHalfElf->setText(QCoreApplication::translate("Widget", "Half-Elf", nullptr));
+        btnHalfElf->setText(QString());
         halfElf->setText(QCoreApplication::translate("Widget", "Half-Elf", nullptr));
-        btnHalfOrc->setText(QCoreApplication::translate("Widget", "Half-Orc", nullptr));
+        btnHalfOrc->setText(QString());
         halfOrc->setText(QCoreApplication::translate("Widget", "Half-Orc", nullptr));
-        btnTiefling->setText(QCoreApplication::translate("Widget", "Tiefling", nullptr));
+        btnTiefling->setText(QString());
         tiefling->setText(QCoreApplication::translate("Widget", "Tiefling", nullptr));
     } // retranslateUi
 

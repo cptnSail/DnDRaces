@@ -54,7 +54,11 @@
          </size>
         </property>
         <property name="text">
-         <string>Dwarf</string>
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="Source.qrc">
+          <normaloff>:/src/DwarfIcon.jpg</normaloff>:/src/DwarfIcon.jpg</iconset>
         </property>
        </widget>
       </item>
@@ -99,7 +103,7 @@
          </size>
         </property>
         <property name="text">
-         <string>Elf</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -141,7 +145,7 @@
          </size>
         </property>
         <property name="text">
-         <string>Halfling</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -183,7 +187,7 @@
          </size>
         </property>
         <property name="text">
-         <string>Human</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -235,7 +239,7 @@
          </size>
         </property>
         <property name="text">
-         <string>Gnome</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -277,7 +281,7 @@
          </size>
         </property>
         <property name="text">
-         <string>Half-Elf</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -319,7 +323,7 @@
          </size>
         </property>
         <property name="text">
-         <string>Half-Orc</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -361,7 +365,7 @@
          </size>
         </property>
         <property name="text">
-         <string>Tiefling</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -394,6 +398,8 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="Source.qrc"/>
+ </resources>
  <connections/>
 </ui>
