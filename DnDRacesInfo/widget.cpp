@@ -10,6 +10,8 @@ Widget::Widget(QWidget *parent)
 {
     ui->setupUi(this);
     setInterfaceStyle();
+
+    manager = new NetworkManager;
 }
 
 Widget::~Widget()

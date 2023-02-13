@@ -274,6 +274,7 @@ Makefile: ../DnDRacesInfo/DnDRacesInfo.pro ../../../5.15.2/mingw81_32/mkspecs/wi
 		../DnDRacesInfo/DnDRacesInfo.pro \
 		../../../5.15.2/mingw81_32/lib/Qt5Widgets.prl \
 		../../../5.15.2/mingw81_32/lib/Qt5Gui.prl \
+		../../../5.15.2/mingw81_32/lib/Qt5Network.prl \
 		../../../5.15.2/mingw81_32/lib/Qt5Core.prl \
 		../../../5.15.2/mingw81_32/lib/qtmain.prl \
 		../../../5.15.2/mingw81_32/mkspecs/features/build_pass.prf \
@@ -483,6 +484,7 @@ Makefile: ../DnDRacesInfo/DnDRacesInfo.pro ../../../5.15.2/mingw81_32/mkspecs/wi
 ../DnDRacesInfo/DnDRacesInfo.pro:
 ../../../5.15.2/mingw81_32/lib/Qt5Widgets.prl:
 ../../../5.15.2/mingw81_32/lib/Qt5Gui.prl:
+../../../5.15.2/mingw81_32/lib/Qt5Network.prl:
 ../../../5.15.2/mingw81_32/lib/Qt5Core.prl:
 ../../../5.15.2/mingw81_32/lib/qtmain.prl:
 ../../../5.15.2/mingw81_32/mkspecs/features/build_pass.prf:

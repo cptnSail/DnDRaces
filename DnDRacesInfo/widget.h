@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QPainter>
 #include <stylehelper.h>
+#include <networkmanager.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -26,5 +27,6 @@ protected:
 
 private:
     Ui::Widget *ui;
+    NetworkManager *manager;
 };
 #endif // WIDGET_H
