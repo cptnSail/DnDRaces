@@ -64,8 +64,8 @@ public:
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QString::fromUtf8("Widget"));
-        Widget->resize(642, 840);
-        Widget->setMaximumSize(QSize(642, 840));
+        Widget->resize(642, 793);
+        Widget->setMaximumSize(QSize(642, 800));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/src/Icon.png"), QSize(), QIcon::Normal, QIcon::Off);
         Widget->setWindowIcon(icon);
