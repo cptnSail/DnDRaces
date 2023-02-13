@@ -1,7 +1,14 @@
 <RCC>
     <qresource prefix="/">
         <file>src/Icon.png</file>
-        <file>src/DwarfIcon.jpg</file>
-        <file>src/ElfIcon.jpg</file>
+        <file>.gitignore</file>
+        <file>src/DwarfOf.png</file>
+        <file>src/ElfOf.png</file>
+        <file>src/GnomeOf.png</file>
+        <file>src/HalfOf.png</file>
+        <file>src/HElfOf.png</file>
+        <file>src/HOrcOf.png</file>
+        <file>src/HumanOf.png</file>
+        <file>src/TieflingOf.png</file>
     </qresource>
 </RCC>

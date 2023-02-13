@@ -49,8 +49,7 @@ void Widget::setLabelStyle()
 
 void Widget::setPortraitStyle()
 {
-    setPortrait();
-
+    QSize size(195, 194);
     QGridLayout *grd = qobject_cast <QGridLayout*>(ui->gridLayout->layout());
 
     for (int row = 1; row < 4; row++) {
@@ -60,15 +59,10 @@ void Widget::setPortraitStyle()
                 QPushButton *btn = qobject_cast <QPushButton*>(box->itemAt(0)->widget());
 
                 btn->setStyleSheet(StyleHelper::getPortraitStyle());
+                btn->setIconSize(size);
             }
         }
     }
-}
-
-void Widget::setPortrait()
-{
-    QSize size(195, 194);
-    ui->btnDwarf->setIconSize(size);
 }
 
 void Widget::paintEvent(QPaintEvent *event)

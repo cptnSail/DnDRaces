@@ -108,8 +108,16 @@ compiler_rcc_clean:
 	-$(DEL_FILE) release\qrc_Source.cpp
 release/qrc_Source.cpp: ../DnDRacesInfo/Source.qrc \
 		../../../5.15.2/mingw81_32/bin/rcc.exe \
+		../DnDRacesInfo/.gitignore \
+		../DnDRacesInfo/src/HOrcOf.png \
+		../DnDRacesInfo/src/HElfOf.png \
+		../DnDRacesInfo/src/TieflingOf.png \
+		../DnDRacesInfo/src/HalfOf.png \
 		../DnDRacesInfo/src/Icon.png \
-		../DnDRacesInfo/src/DwarfIcon.jpg
+		../DnDRacesInfo/src/ElfOf.png \
+		../DnDRacesInfo/src/DwarfOf.png \
+		../DnDRacesInfo/src/HumanOf.png \
+		../DnDRacesInfo/src/GnomeOf.png
 	C:\Qt\5.15.2\mingw81_32\bin\rcc.exe -name Source ..\DnDRacesInfo\Source.qrc -o release\qrc_Source.cpp
 
 compiler_moc_predefs_make_all: release/moc_predefs.h
@@ -533,6 +541,7 @@ release/widget.o: ../DnDRacesInfo/widget.cpp ../DnDRacesInfo/widget.h \
 		../../../5.15.2/mingw81_32/include/QtCore/QString \
 		ui_widget.h \
 		../../../5.15.2/mingw81_32/include/QtCore/QVariant \
+		../../../5.15.2/mingw81_32/include/QtGui/QIcon \
 		../../../5.15.2/mingw81_32/include/QtWidgets/QApplication \
 		../../../5.15.2/mingw81_32/include/QtWidgets/qapplication.h \
 		../../../5.15.2/mingw81_32/include/QtCore/qcoreapplication.h \
@@ -540,6 +549,8 @@ release/widget.o: ../DnDRacesInfo/widget.cpp ../DnDRacesInfo/widget.h \
 		../../../5.15.2/mingw81_32/include/QtWidgets/qdesktopwidget.h \
 		../../../5.15.2/mingw81_32/include/QtGui/qguiapplication.h \
 		../../../5.15.2/mingw81_32/include/QtGui/qinputmethod.h \
+		../../../5.15.2/mingw81_32/include/QtWidgets/QFrame \
+		../../../5.15.2/mingw81_32/include/QtWidgets/qframe.h \
 		../../../5.15.2/mingw81_32/include/QtWidgets/QGridLayout \
 		../../../5.15.2/mingw81_32/include/QtWidgets/qgridlayout.h \
 		../../../5.15.2/mingw81_32/include/QtWidgets/qlayout.h \
@@ -547,7 +558,6 @@ release/widget.o: ../DnDRacesInfo/widget.cpp ../DnDRacesInfo/widget.h \
 		../../../5.15.2/mingw81_32/include/QtWidgets/qboxlayout.h \
 		../../../5.15.2/mingw81_32/include/QtWidgets/QLabel \
 		../../../5.15.2/mingw81_32/include/QtWidgets/qlabel.h \
-		../../../5.15.2/mingw81_32/include/QtWidgets/qframe.h \
 		../../../5.15.2/mingw81_32/include/QtWidgets/QMenuBar \
 		../../../5.15.2/mingw81_32/include/QtWidgets/qmenubar.h \
 		../../../5.15.2/mingw81_32/include/QtWidgets/qmenu.h \

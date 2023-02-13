@@ -20,7 +20,6 @@ public:
     void setInterfaceStyle();
     void setLabelStyle();
     void setPortraitStyle();
-    void setPortrait();
 protected:
     void paintEvent(QPaintEvent *event);
 

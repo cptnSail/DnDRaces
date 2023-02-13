@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
@@ -54,6 +55,8 @@ public:
     QVBoxLayout *verticalLayout_8;
     QPushButton *btnTiefling;
     QLabel *tiefling;
+    QFrame *line;
+    QFrame *line_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -63,6 +66,10 @@ public:
             Widget->setObjectName(QString::fromUtf8("Widget"));
         Widget->resize(642, 840);
         Widget->setMaximumSize(QSize(642, 840));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/src/Icon.png"), QSize(), QIcon::Normal, QIcon::Off);
+        Widget->setWindowIcon(icon);
+        Widget->setToolTipDuration(-10);
         centralwidget = new QWidget(Widget);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         gridLayout = new QGridLayout(centralwidget);
@@ -84,9 +91,9 @@ public:
         btnDwarf->setSizePolicy(sizePolicy);
         btnDwarf->setMinimumSize(QSize(200, 200));
         btnDwarf->setMaximumSize(QSize(200, 200));
-        QIcon icon;
-        icon.addFile(QString::fromUtf8(":/src/DwarfIcon.jpg"), QSize(), QIcon::Normal, QIcon::Off);
-        btnDwarf->setIcon(icon);
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/src/DwarfOf.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnDwarf->setIcon(icon1);
 
         verticalLayout->addWidget(btnDwarf);
 
@@ -109,6 +116,9 @@ public:
         btnElf->setSizePolicy(sizePolicy);
         btnElf->setMinimumSize(QSize(200, 200));
         btnElf->setMaximumSize(QSize(200, 200));
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/src/ElfOf.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnElf->setIcon(icon2);
 
         verticalLayout_2->addWidget(btnElf);
 
@@ -130,6 +140,9 @@ public:
         btnHalfling->setSizePolicy(sizePolicy);
         btnHalfling->setMinimumSize(QSize(200, 200));
         btnHalfling->setMaximumSize(QSize(200, 200));
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/src/HalfOf.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnHalfling->setIcon(icon3);
 
         verticalLayout_3->addWidget(btnHalfling);
 
@@ -151,6 +164,9 @@ public:
         btnHuman->setSizePolicy(sizePolicy);
         btnHuman->setMinimumSize(QSize(200, 200));
         btnHuman->setMaximumSize(QSize(200, 200));
+        QIcon icon4;
+        icon4.addFile(QString::fromUtf8(":/src/HumanOf.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnHuman->setIcon(icon4);
 
         verticalLayout_4->addWidget(btnHuman);
 
@@ -178,6 +194,9 @@ public:
         btnGnome->setSizePolicy(sizePolicy);
         btnGnome->setMinimumSize(QSize(200, 200));
         btnGnome->setMaximumSize(QSize(200, 200));
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8(":/src/GnomeOf.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnGnome->setIcon(icon5);
 
         verticalLayout_5->addWidget(btnGnome);
 
@@ -199,6 +218,9 @@ public:
         btnHalfElf->setSizePolicy(sizePolicy);
         btnHalfElf->setMinimumSize(QSize(200, 200));
         btnHalfElf->setMaximumSize(QSize(200, 200));
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8(":/src/HElfOf.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnHalfElf->setIcon(icon6);
 
         verticalLayout_6->addWidget(btnHalfElf);
 
@@ -220,6 +242,9 @@ public:
         btnHalfOrc->setSizePolicy(sizePolicy);
         btnHalfOrc->setMinimumSize(QSize(200, 200));
         btnHalfOrc->setMaximumSize(QSize(200, 200));
+        QIcon icon7;
+        icon7.addFile(QString::fromUtf8(":/src/HOrcOf.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnHalfOrc->setIcon(icon7);
 
         verticalLayout_7->addWidget(btnHalfOrc);
 
@@ -241,6 +266,9 @@ public:
         btnTiefling->setSizePolicy(sizePolicy);
         btnTiefling->setMinimumSize(QSize(200, 200));
         btnTiefling->setMaximumSize(QSize(200, 200));
+        QIcon icon8;
+        icon8.addFile(QString::fromUtf8(":/src/TieflingOf.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnTiefling->setIcon(icon8);
 
         verticalLayout_8->addWidget(btnTiefling);
 
@@ -253,6 +281,22 @@ public:
 
 
         gridLayout->addLayout(verticalLayout_8, 3, 2, 1, 1);
+
+        line = new QFrame(centralwidget);
+        line->setObjectName(QString::fromUtf8("line"));
+        line->setLineWidth(5);
+        line->setFrameShape(QFrame::HLine);
+        line->setFrameShadow(QFrame::Sunken);
+
+        gridLayout->addWidget(line, 0, 0, 1, 1);
+
+        line_2 = new QFrame(centralwidget);
+        line_2->setObjectName(QString::fromUtf8("line_2"));
+        line_2->setLineWidth(5);
+        line_2->setFrameShape(QFrame::HLine);
+        line_2->setFrameShadow(QFrame::Sunken);
+
+        gridLayout->addWidget(line_2, 0, 2, 1, 1);
 
         Widget->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Widget);
@@ -270,7 +314,7 @@ public:
 
     void retranslateUi(QMainWindow *Widget)
     {
-        Widget->setWindowTitle(QCoreApplication::translate("Widget", "Widget", nullptr));
+        Widget->setWindowTitle(QCoreApplication::translate("Widget", "D&D Races", nullptr));
         label->setText(QCoreApplication::translate("Widget", "Races", nullptr));
         btnDwarf->setText(QString());
         dwarf->setText(QCoreApplication::translate("Widget", "Dwarf", nullptr));

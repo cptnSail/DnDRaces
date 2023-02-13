@@ -17,7 +17,14 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Widget</string>
+   <string>D&amp;D Races</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Source.qrc">
+    <normaloff>:/src/Icon.png</normaloff>:/src/Icon.png</iconset>
+  </property>
+  <property name="toolTipDuration">
+   <number>-10</number>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -58,7 +65,7 @@
         </property>
         <property name="icon">
          <iconset resource="Source.qrc">
-          <normaloff>:/src/DwarfIcon.jpg</normaloff>:/src/DwarfIcon.jpg</iconset>
+          <normaloff>:/src/DwarfOf.png</normaloff>:/src/DwarfOf.png</iconset>
         </property>
        </widget>
       </item>
@@ -105,6 +112,10 @@
         <property name="text">
          <string/>
         </property>
+        <property name="icon">
+         <iconset resource="Source.qrc">
+          <normaloff>:/src/ElfOf.png</normaloff>:/src/ElfOf.png</iconset>
+        </property>
        </widget>
       </item>
       <item>
@@ -147,6 +158,10 @@
         <property name="text">
          <string/>
         </property>
+        <property name="icon">
+         <iconset resource="Source.qrc">
+          <normaloff>:/src/HalfOf.png</normaloff>:/src/HalfOf.png</iconset>
+        </property>
        </widget>
       </item>
       <item>
@@ -188,6 +203,10 @@
         </property>
         <property name="text">
          <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="Source.qrc">
+          <normaloff>:/src/HumanOf.png</normaloff>:/src/HumanOf.png</iconset>
         </property>
        </widget>
       </item>
@@ -241,6 +260,10 @@
         <property name="text">
          <string/>
         </property>
+        <property name="icon">
+         <iconset resource="Source.qrc">
+          <normaloff>:/src/GnomeOf.png</normaloff>:/src/GnomeOf.png</iconset>
+        </property>
        </widget>
       </item>
       <item>
@@ -282,6 +305,10 @@
         </property>
         <property name="text">
          <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="Source.qrc">
+          <normaloff>:/src/HElfOf.png</normaloff>:/src/HElfOf.png</iconset>
         </property>
        </widget>
       </item>
@@ -325,6 +352,10 @@
         <property name="text">
          <string/>
         </property>
+        <property name="icon">
+         <iconset resource="Source.qrc">
+          <normaloff>:/src/HOrcOf.png</normaloff>:/src/HOrcOf.png</iconset>
+        </property>
        </widget>
       </item>
       <item>
@@ -367,6 +398,10 @@
         <property name="text">
          <string/>
         </property>
+        <property name="icon">
+         <iconset resource="Source.qrc">
+          <normaloff>:/src/TieflingOf.png</normaloff>:/src/TieflingOf.png</iconset>
+        </property>
        </widget>
       </item>
       <item>
@@ -383,6 +418,26 @@
        </widget>
       </item>
      </layout>
+    </item>
+    <item row="0" column="0">
+     <widget class="Line" name="line">
+      <property name="lineWidth">
+       <number>5</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="Line" name="line_2">
+      <property name="lineWidth">
+       <number>5</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
