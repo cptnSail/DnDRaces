@@ -11,7 +11,8 @@ Widget::Widget(QWidget *parent)
     ui->setupUi(this);
     setInterfaceStyle();
 
-    manager = new NetworkManager;
+    dbManager = new DataBaseManager;
+    netManager = new NetworkManager;
 }
 
 Widget::~Widget()
