@@ -13,6 +13,8 @@ Widget::Widget(QWidget *parent)
 
     dbManager = new DataBaseManager;
     netManager = new NetworkManager;
+    connect(netManager, &NetworkManager::readComplete, dbManager, &DataBaseManager::getDataFromNet);
+
 }
 
 Widget::~Widget()

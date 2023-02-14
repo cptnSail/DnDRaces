@@ -18,7 +18,7 @@ public slots:
     void setData(QNetworkReply *reply);
 
 signals:
-    void readComplet();
+    void readComplete(QByteArray *ba);
 
 private:
     QNetworkAccessManager *manager;

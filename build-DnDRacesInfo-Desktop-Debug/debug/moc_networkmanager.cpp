@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_NetworkManager_t {
-    QByteArrayData data[7];
-    char stringdata0[68];
+    QByteArrayData data[9];
+    char stringdata0[84];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,16 +33,19 @@ struct qt_meta_stringdata_NetworkManager_t {
 static const qt_meta_stringdata_NetworkManager_t qt_meta_stringdata_NetworkManager = {
     {
 QT_MOC_LITERAL(0, 0, 14), // "NetworkManager"
-QT_MOC_LITERAL(1, 15, 11), // "readComplet"
-QT_MOC_LITERAL(2, 27, 0), // ""
-QT_MOC_LITERAL(3, 28, 10), // "getNetData"
-QT_MOC_LITERAL(4, 39, 7), // "setData"
-QT_MOC_LITERAL(5, 47, 14), // "QNetworkReply*"
-QT_MOC_LITERAL(6, 62, 5) // "reply"
+QT_MOC_LITERAL(1, 15, 12), // "readComplete"
+QT_MOC_LITERAL(2, 28, 0), // ""
+QT_MOC_LITERAL(3, 29, 11), // "QByteArray*"
+QT_MOC_LITERAL(4, 41, 2), // "ba"
+QT_MOC_LITERAL(5, 44, 10), // "getNetData"
+QT_MOC_LITERAL(6, 55, 7), // "setData"
+QT_MOC_LITERAL(7, 63, 14), // "QNetworkReply*"
+QT_MOC_LITERAL(8, 78, 5) // "reply"
 
     },
-    "NetworkManager\0readComplet\0\0getNetData\0"
-    "setData\0QNetworkReply*\0reply"
+    "NetworkManager\0readComplete\0\0QByteArray*\0"
+    "ba\0getNetData\0setData\0QNetworkReply*\0"
+    "reply"
 };
 #undef QT_MOC_LITERAL
 
@@ -60,18 +63,18 @@ static const uint qt_meta_data_NetworkManager[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   29,    2, 0x06 /* Public */,
+       1,    1,   29,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,   30,    2, 0x0a /* Public */,
-       4,    1,   31,    2, 0x0a /* Public */,
+       5,    0,   32,    2, 0x0a /* Public */,
+       6,    1,   33,    2, 0x0a /* Public */,
 
  // signals: parameters
-    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 3,    4,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 5,    6,
+    QMetaType::Void, 0x80000000 | 7,    8,
 
        0        // eod
 };
@@ -82,7 +85,7 @@ void NetworkManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         auto *_t = static_cast<NetworkManager *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->readComplet(); break;
+        case 0: _t->readComplete((*reinterpret_cast< QByteArray*(*)>(_a[1]))); break;
         case 1: _t->getNetData(); break;
         case 2: _t->setData((*reinterpret_cast< QNetworkReply*(*)>(_a[1]))); break;
         default: ;
@@ -101,8 +104,8 @@ void NetworkManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = void (NetworkManager::*)();
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&NetworkManager::readComplet)) {
+            using _t = void (NetworkManager::*)(QByteArray * );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&NetworkManager::readComplete)) {
                 *result = 0;
                 return;
             }
@@ -151,9 +154,10 @@ int NetworkManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void NetworkManager::readComplet()
+void NetworkManager::readComplete(QByteArray * _t1)
 {
-    QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

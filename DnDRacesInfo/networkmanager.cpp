@@ -9,7 +9,13 @@ NetworkManager::NetworkManager(QObject *p)
     connect(manager, &QNetworkAccessManager::finished, this, &NetworkManager::setData);
 
     netData.clear();
+
     getNetData();
+}
+
+QByteArray NetworkManager::getData()
+{
+    return netData;
 }
 
 void NetworkManager::getNetData()
@@ -23,6 +29,8 @@ void NetworkManager::setData(QNetworkReply *reply)
     if (!reply->error()) {
         netData.append(reply->readAll());
         qDebug() << "Data was readed";
+
+        emit readComplete(&netData);
     } else
         qDebug() << reply->errorString();
 }

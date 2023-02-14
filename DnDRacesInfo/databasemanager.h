@@ -4,6 +4,10 @@
 #include <QObject>
 #include <QSqlDatabase>
 #include <QSqlQuery>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
+#include "networkmanager.h"
 
 class DataBaseManager : public QObject
 {
@@ -11,11 +15,16 @@ class DataBaseManager : public QObject
 public:
     DataBaseManager(QObject *p = 0);
 
-    void createDB();
-    void addObject();
+    void fillDB(QJsonArray &jsonArr);
+    void addObject(QJsonObject &jsonOb, QSqlQuery *q);
+    void addSubObject(QJsonObject &jsonOb, QSqlQuery *q);
 public slots:
-    //void fillDB();
+    void getDataFromNet(QByteArray *ba);
+
+signals:
+    void dbIsEmpty();
 private:
+    void createDB();
     void createRaceInfoTable(QSqlQuery *q);
     void createSubraceTable(QSqlQuery *q);
 
