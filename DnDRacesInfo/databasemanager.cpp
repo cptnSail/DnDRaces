@@ -34,11 +34,11 @@ void DataBaseManager::createDB()
     db.close();
 }
 
-void DataBaseManager::addObject(QJsonObject &jsonOb)
+void DataBaseManager::addObject(QJsonObject &jsonOb, int subId)
 {
     query->prepare("insert into raceInfo (name, desc, asi_desc, speed_desc, vision, age,"
-                                         "alignment, size, languages, traits)"
-                   "values (?,?,?,?,?,?,?,?,?,?)");
+                                         "alignment, size, languages, traits, subrace)"
+                   "values (?,?,?,?,?,?,?,?,?,?,?)");
 
     query->addBindValue(jsonOb.value("name").toString());
     query->addBindValue(jsonOb.value("desc").toString());
@@ -50,6 +50,10 @@ void DataBaseManager::addObject(QJsonObject &jsonOb)
     query->addBindValue(jsonOb.value("size").toString());
     query->addBindValue(jsonOb.value("languages").toString());
     query->addBindValue(jsonOb.value("traits").toString());
+    if (!jsonOb.value("subraces").toArray().isEmpty())
+        query->addBindValue(subId);
+    else
+        query->addBindValue("");
 
     if (!query->exec())
         qDebug() << query->lastError().databaseText();
@@ -88,7 +92,13 @@ void DataBaseManager::fillDB(QJsonArray &jsonArr)
         QJsonObject jsonOb = element.toObject();
         if (jsonOb.value("name").toString() != "Dragonborn") {
 
-            addObject(jsonOb);
+            addObject(jsonOb, idCount);
+
+            if (!jsonOb.value("subraces").toArray().isEmpty()) {
+                jsonOb = jsonOb.value("subraces").toArray().first().toObject();
+                addSubObject(jsonOb, idCount);
+                idCount++;
+            }
         }
     }
 

@@ -16,9 +16,8 @@ public:
     DataBaseManager(QObject *p = 0);
 
     void fillDB(QJsonArray &jsonArr);
-    void addObject(QJsonObject &jsonOb);
+    void addObject(QJsonObject &jsonOb, int subId);
     void addSubObject(QJsonObject &jsonOb, int subId);
-    void addSubId();
 public slots:
     void getDataFromNet(QByteArray *ba);
 
