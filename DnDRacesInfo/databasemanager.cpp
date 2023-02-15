@@ -1,6 +1,7 @@
 #include "databasemanager.h"
 #include <QDebug>
 #include <QSqlError>
+#include <QSqlTableModel>
 
 DataBaseManager::DataBaseManager(QObject *p)
 {
@@ -33,23 +34,40 @@ void DataBaseManager::createDB()
     db.close();
 }
 
-void DataBaseManager::addObject(QJsonObject &jsonOb, QSqlQuery *q)
+void DataBaseManager::addObject(QJsonObject &jsonOb)
 {
-    q->addBindValue(jsonOb.value("name").toString());
-    q->addBindValue(jsonOb.value("desc").toString());
-    q->addBindValue(jsonOb.value("asi_desc").toString());
-    q->addBindValue(jsonOb.value("speed_desc").toString());
-    q->addBindValue(jsonOb.value("vision").toString());
-    q->addBindValue(jsonOb.value("age").toString());
-    q->addBindValue(jsonOb.value("aligment").toString());
-    q->addBindValue(jsonOb.value("size").toString());
-    q->addBindValue(jsonOb.value("languages").toString());
-    q->addBindValue(jsonOb.value("traits").toString());
+    query->prepare("insert into raceInfo (name, desc, asi_desc, speed_desc, vision, age,"
+                                         "alignment, size, languages, traits)"
+                   "values (?,?,?,?,?,?,?,?,?,?)");
+
+    query->addBindValue(jsonOb.value("name").toString());
+    query->addBindValue(jsonOb.value("desc").toString());
+    query->addBindValue(jsonOb.value("asi_desc").toString());
+    query->addBindValue(jsonOb.value("speed_desc").toString());
+    query->addBindValue(jsonOb.value("vision").toString());
+    query->addBindValue(jsonOb.value("age").toString());
+    query->addBindValue(jsonOb.value("alignment").toString());
+    query->addBindValue(jsonOb.value("size").toString());
+    query->addBindValue(jsonOb.value("languages").toString());
+    query->addBindValue(jsonOb.value("traits").toString());
+
+    if (!query->exec())
+        qDebug() << query->lastError().databaseText();
 }
 
-void DataBaseManager::addSubObject(QJsonObject &jsonOb, QSqlQuery *q)
+void DataBaseManager::addSubObject(QJsonObject &jsonOb, int subId)
 {
+    query->prepare("insert into subraces (id, name, desc, asi_desc, traits)"
+                   "values (?,?,?,?,?)");
 
+    query->addBindValue(subId);
+    query->addBindValue(jsonOb.value("name").toString());
+    query->addBindValue(jsonOb.value("desc").toString());
+    query->addBindValue(jsonOb.value("asi_desc").toString());
+    query->addBindValue(jsonOb.value("traits").toString());
+
+    if (!query->exec())
+        qDebug() << query->lastError().databaseText();
 }
 
 void DataBaseManager::getDataFromNet(QByteArray *ba)
@@ -64,20 +82,13 @@ void DataBaseManager::fillDB(QJsonArray &jsonArr)
 {
     db.open();
     query = new QSqlQuery(db);
+    int idCount = 1;
 
     for (auto element : jsonArr) {
         QJsonObject jsonOb = element.toObject();
         if (jsonOb.value("name").toString() != "Dragonborn") {
-            query->prepare("insert into raceInfo (name, desc, asi_desc, speed_desc, vision, age,"
-                                                 "aligment, size, languages, traits)"
-                           "values (?,?,?,?,?,?,?,?,?,?)");
 
-            addObject(jsonOb, query);
-
-            if (query->exec())
-                qDebug() << "Add object: " << jsonOb.value("name").toString();
-            else
-                qDebug() << query->lastError().databaseText();
+            addObject(jsonOb);
         }
     }
 
@@ -85,6 +96,7 @@ void DataBaseManager::fillDB(QJsonArray &jsonArr)
     db.close();
     delete query;
 }
+
 
 void DataBaseManager::createRaceInfoTable(QSqlQuery *q)
 {
@@ -96,7 +108,7 @@ void DataBaseManager::createRaceInfoTable(QSqlQuery *q)
                          "speed_desc text,"
                          "vision text,"
                          "age text,"
-                         "aligment text,"
+                         "alignment text,"
                          "size text,"
                          "languages text,"
                          "traits text,"
@@ -109,7 +121,7 @@ void DataBaseManager::createRaceInfoTable(QSqlQuery *q)
 void DataBaseManager::createSubraceTable(QSqlQuery *q)
 {
     bool check = q->exec("create table subraces ("
-                             "id integer primary key AUTOINCREMENT,"
+                             "id integer primary key,"
                              "name text UNIQUE,"
                              "desc text,"
                              "asi_desc text,"
