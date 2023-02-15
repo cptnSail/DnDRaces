@@ -11,7 +11,6 @@ class NetworkManager : public QObject
     Q_OBJECT
 public:
     explicit NetworkManager(QObject *p = 0);
-    QByteArray getData();
 
 public slots:
     void getNetData();

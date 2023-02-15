@@ -14,17 +14,18 @@ class DataBaseManager : public QObject
     Q_OBJECT
 public:
     DataBaseManager(QObject *p = 0);
+    ~DataBaseManager();
 
     void fillDB(QJsonArray &jsonArr);
     void addObject(QJsonObject &jsonOb, int subId);
     void addSubObject(QJsonObject &jsonOb, int subId);
 public slots:
+    void createDB();
     void getDataFromNet(QByteArray *ba);
 
 signals:
     void dbIsEmpty();
 private:
-    void createDB();
     void createRaceInfoTable(QSqlQuery *q);
     void createSubraceTable(QSqlQuery *q);
 

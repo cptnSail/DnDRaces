@@ -9,29 +9,29 @@ DataBaseManager::DataBaseManager(QObject *p)
 
     db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("./RacesDB.db");
+    db.open();
+}
 
-    createDB();
+DataBaseManager::~DataBaseManager()
+{
+    db.close();
 }
 
 void DataBaseManager::createDB()
 {
-    db.open();
     if (db.isOpen() && db.tables().isEmpty()) {
         query = new QSqlQuery(db);
         createRaceInfoTable(query);
         createSubraceTable(query);
 
-        emit dbIsEmpty();
-
         delete query;
+        emit dbIsEmpty();
 
     } else if (db.isOpenError()) {
         qDebug() << db.lastError().databaseText();
     } else {
         qDebug() << "DB is alredy exists";
     }
-
-    db.close();
 }
 
 void DataBaseManager::addObject(QJsonObject &jsonOb, int subId)
@@ -84,7 +84,6 @@ void DataBaseManager::getDataFromNet(QByteArray *ba)
 
 void DataBaseManager::fillDB(QJsonArray &jsonArr)
 {
-    db.open();
     query = new QSqlQuery(db);
     int idCount = 1;
 
@@ -102,8 +101,6 @@ void DataBaseManager::fillDB(QJsonArray &jsonArr)
         }
     }
 
-
-    db.close();
     delete query;
 }
 

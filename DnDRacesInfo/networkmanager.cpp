@@ -10,13 +10,9 @@ NetworkManager::NetworkManager(QObject *p)
 
     netData.clear();
 
-    getNetData();
+    //getNetData();
 }
 
-QByteArray NetworkManager::getData()
-{
-    return netData;
-}
 
 void NetworkManager::getNetData()
 {
