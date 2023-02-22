@@ -64,8 +64,8 @@ public:
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QString::fromUtf8("Widget"));
-        Widget->resize(642, 793);
-        Widget->setMaximumSize(QSize(642, 800));
+        Widget->resize(486, 612);
+        Widget->setMaximumSize(QSize(486, 612));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/src/Icon.png"), QSize(), QIcon::Normal, QIcon::Off);
         Widget->setWindowIcon(icon);
@@ -89,8 +89,8 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(btnDwarf->sizePolicy().hasHeightForWidth());
         btnDwarf->setSizePolicy(sizePolicy);
-        btnDwarf->setMinimumSize(QSize(200, 200));
-        btnDwarf->setMaximumSize(QSize(200, 200));
+        btnDwarf->setMinimumSize(QSize(150, 150));
+        btnDwarf->setMaximumSize(QSize(150, 150));
         QIcon icon1;
         icon1.addFile(QString::fromUtf8(":/src/DwarfOf.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnDwarf->setIcon(icon1);
@@ -114,8 +114,8 @@ public:
         btnElf->setObjectName(QString::fromUtf8("btnElf"));
         sizePolicy.setHeightForWidth(btnElf->sizePolicy().hasHeightForWidth());
         btnElf->setSizePolicy(sizePolicy);
-        btnElf->setMinimumSize(QSize(200, 200));
-        btnElf->setMaximumSize(QSize(200, 200));
+        btnElf->setMinimumSize(QSize(150, 150));
+        btnElf->setMaximumSize(QSize(150, 150));
         QIcon icon2;
         icon2.addFile(QString::fromUtf8(":/src/ElfOf.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnElf->setIcon(icon2);
@@ -138,8 +138,8 @@ public:
         btnHalfling->setObjectName(QString::fromUtf8("btnHalfling"));
         sizePolicy.setHeightForWidth(btnHalfling->sizePolicy().hasHeightForWidth());
         btnHalfling->setSizePolicy(sizePolicy);
-        btnHalfling->setMinimumSize(QSize(200, 200));
-        btnHalfling->setMaximumSize(QSize(200, 200));
+        btnHalfling->setMinimumSize(QSize(150, 150));
+        btnHalfling->setMaximumSize(QSize(150, 150));
         QIcon icon3;
         icon3.addFile(QString::fromUtf8(":/src/HalfOf.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnHalfling->setIcon(icon3);
@@ -162,8 +162,8 @@ public:
         btnHuman->setObjectName(QString::fromUtf8("btnHuman"));
         sizePolicy.setHeightForWidth(btnHuman->sizePolicy().hasHeightForWidth());
         btnHuman->setSizePolicy(sizePolicy);
-        btnHuman->setMinimumSize(QSize(200, 200));
-        btnHuman->setMaximumSize(QSize(200, 200));
+        btnHuman->setMinimumSize(QSize(150, 150));
+        btnHuman->setMaximumSize(QSize(150, 150));
         QIcon icon4;
         icon4.addFile(QString::fromUtf8(":/src/HumanOf.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnHuman->setIcon(icon4);
@@ -182,6 +182,7 @@ public:
 
         Icon = new QLabel(centralwidget);
         Icon->setObjectName(QString::fromUtf8("Icon"));
+        Icon->setMaximumSize(QSize(152, 170));
         Icon->setAlignment(Qt::AlignCenter);
 
         gridLayout->addWidget(Icon, 2, 1, 1, 1);
@@ -192,8 +193,8 @@ public:
         btnGnome->setObjectName(QString::fromUtf8("btnGnome"));
         sizePolicy.setHeightForWidth(btnGnome->sizePolicy().hasHeightForWidth());
         btnGnome->setSizePolicy(sizePolicy);
-        btnGnome->setMinimumSize(QSize(200, 200));
-        btnGnome->setMaximumSize(QSize(200, 200));
+        btnGnome->setMinimumSize(QSize(150, 150));
+        btnGnome->setMaximumSize(QSize(150, 150));
         QIcon icon5;
         icon5.addFile(QString::fromUtf8(":/src/GnomeOf.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnGnome->setIcon(icon5);
@@ -216,8 +217,8 @@ public:
         btnHalfElf->setObjectName(QString::fromUtf8("btnHalfElf"));
         sizePolicy.setHeightForWidth(btnHalfElf->sizePolicy().hasHeightForWidth());
         btnHalfElf->setSizePolicy(sizePolicy);
-        btnHalfElf->setMinimumSize(QSize(200, 200));
-        btnHalfElf->setMaximumSize(QSize(200, 200));
+        btnHalfElf->setMinimumSize(QSize(150, 150));
+        btnHalfElf->setMaximumSize(QSize(150, 150));
         QIcon icon6;
         icon6.addFile(QString::fromUtf8(":/src/HElfOf.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnHalfElf->setIcon(icon6);
@@ -240,8 +241,8 @@ public:
         btnHalfOrc->setObjectName(QString::fromUtf8("btnHalfOrc"));
         sizePolicy.setHeightForWidth(btnHalfOrc->sizePolicy().hasHeightForWidth());
         btnHalfOrc->setSizePolicy(sizePolicy);
-        btnHalfOrc->setMinimumSize(QSize(200, 200));
-        btnHalfOrc->setMaximumSize(QSize(200, 200));
+        btnHalfOrc->setMinimumSize(QSize(150, 150));
+        btnHalfOrc->setMaximumSize(QSize(150, 150));
         QIcon icon7;
         icon7.addFile(QString::fromUtf8(":/src/HOrcOf.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnHalfOrc->setIcon(icon7);
@@ -264,8 +265,8 @@ public:
         btnTiefling->setObjectName(QString::fromUtf8("btnTiefling"));
         sizePolicy.setHeightForWidth(btnTiefling->sizePolicy().hasHeightForWidth());
         btnTiefling->setSizePolicy(sizePolicy);
-        btnTiefling->setMinimumSize(QSize(200, 200));
-        btnTiefling->setMaximumSize(QSize(200, 200));
+        btnTiefling->setMinimumSize(QSize(150, 150));
+        btnTiefling->setMaximumSize(QSize(150, 150));
         QIcon icon8;
         icon8.addFile(QString::fromUtf8(":/src/TieflingOf.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnTiefling->setIcon(icon8);
@@ -301,7 +302,7 @@ public:
         Widget->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Widget);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 642, 26));
+        menubar->setGeometry(QRect(0, 0, 486, 21));
         Widget->setMenuBar(menubar);
         statusbar = new QStatusBar(Widget);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));

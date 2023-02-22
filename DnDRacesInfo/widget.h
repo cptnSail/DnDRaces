@@ -23,12 +23,14 @@ public:
     void setInterfaceStyle();
     void setLabelStyle();
     void setPortraitStyle();
+    void setBtnConnection();
+    void createInfoWidget(QString name);
 
 public slots:
-    void createInfoWidget();
+    void onBtnClicked();
+
 protected:
     void paintEvent(QPaintEvent *event);
-
 
 private:
     Ui::Widget *ui;
