@@ -45,6 +45,7 @@ void InfoWidget::createInfo(QString name)
 
 void InfoWidget::setInfo()
 {
+    ui->textEdit->clear();
     ui->textEdit->setText(editedText);
 }
 
