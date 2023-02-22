@@ -9,8 +9,8 @@ QString StyleHelper::getNameStyle()
 {
     return "QLabel {"
            "color: white;"
-           "font-size: 20px;"
-           "font-weight: 500;"
+           "font-size: 15px;"
+           "font-weight: 450;"
            "font-family: Georgia, serif }";
 }
 
@@ -18,8 +18,8 @@ QString StyleHelper::getLabelStyle()
 {
     return "QLabel {"
            "color: white;"
-           "font-size: 50px;"
-           "font-weight: 600;"
+           "font-size: 40px;"
+           "font-weight: 500;"
            "letter-spacing: 3px;"
            "font-family: Georgia, serif}";
 }

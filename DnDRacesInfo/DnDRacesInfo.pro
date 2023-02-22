@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     databasemanager.cpp \
+    infowidget.cpp \
     main.cpp \
     networkmanager.cpp \
     stylehelper.cpp \
@@ -17,11 +18,13 @@ SOURCES += \
 
 HEADERS += \
     databasemanager.h \
+    infowidget.h \
     networkmanager.h \
     stylehelper.h \
     widget.h
 
 FORMS += \
+    infowidget.ui \
     widget.ui
 
 # Default rules for deployment.

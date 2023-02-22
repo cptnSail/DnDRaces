@@ -7,7 +7,6 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
-#include "networkmanager.h"
 
 class DataBaseManager : public QObject
 {
