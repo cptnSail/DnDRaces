@@ -6,6 +6,7 @@
 #include <stylehelper.h>
 #include <networkmanager.h>
 #include "databasemanager.h"
+#include "infowidget.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -22,6 +23,9 @@ public:
     void setInterfaceStyle();
     void setLabelStyle();
     void setPortraitStyle();
+
+public slots:
+    void createInfoWidget();
 protected:
     void paintEvent(QPaintEvent *event);
 
@@ -30,5 +34,6 @@ private:
     Ui::Widget *ui;
     NetworkManager *netManager;
     DataBaseManager *dbManager;
+    InfoWidget *iw;
 };
 #endif // WIDGET_H

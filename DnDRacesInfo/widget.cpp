@@ -17,6 +17,8 @@ Widget::Widget(QWidget *parent)
     connect(dbManager, &DataBaseManager::dbIsEmpty, netManager, &NetworkManager::getNetData);
     connect(netManager, &NetworkManager::readComplete, dbManager, &DataBaseManager::getDataFromNet);
 
+    connect(ui->btnDwarf, &QPushButton::clicked, this, &Widget::createInfoWidget);
+
     dbManager->createDB();
 }
 
@@ -57,7 +59,7 @@ void Widget::setLabelStyle()
 
 void Widget::setPortraitStyle()
 {
-    QSize size(195, 194);
+    QSize size(ui->btnDwarf->width()-5, ui->btnDwarf->height()-6);
     QGridLayout *grd = qobject_cast <QGridLayout*>(ui->gridLayout->layout());
 
     for (int row = 1; row < 4; row++) {
@@ -71,6 +73,15 @@ void Widget::setPortraitStyle()
             }
         }
     }
+}
+
+void Widget::createInfoWidget()
+{
+    iw = new InfoWidget;
+
+    iw->createInfo("Dwarf");
+
+    iw->show();
 }
 
 void Widget::paintEvent(QPaintEvent *event)
