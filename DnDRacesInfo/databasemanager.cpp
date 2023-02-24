@@ -2,6 +2,7 @@
 #include <QDebug>
 #include <QSqlError>
 #include <QSqlTableModel>
+#include <QJsonDocument>
 
 DataBaseManager::DataBaseManager(QObject *p)
 {
@@ -10,21 +11,21 @@ DataBaseManager::DataBaseManager(QObject *p)
     db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("./RacesDB.db");
     db.open();
+    query = new QSqlQuery(db);
 }
 
 DataBaseManager::~DataBaseManager()
 {
+    delete query;
     db.close();
 }
 
 void DataBaseManager::createDB()
 {
     if (db.isOpen() && db.tables().isEmpty()) {
-        query = new QSqlQuery(db);
         createRaceInfoTable(query);
         createSubraceTable(query);
 
-        delete query;
         emit dbIsEmpty();
 
     } else if (db.isOpenError()) {
@@ -84,7 +85,6 @@ void DataBaseManager::getDataFromNet(QByteArray *ba)
 
 void DataBaseManager::fillDB(QJsonArray &jsonArr)
 {
-    query = new QSqlQuery(db);
     int idCount = 1;
 
     for (auto element : jsonArr) {
@@ -100,8 +100,6 @@ void DataBaseManager::fillDB(QJsonArray &jsonArr)
             }
         }
     }
-
-    delete query;
 }
 
 

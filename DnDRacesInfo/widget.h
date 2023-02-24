@@ -20,14 +20,14 @@ public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
 
-    void setInterfaceStyle();
-    void setLabelStyle();
-    void setPortraitStyle();
-    void setBtnConnection();
-    void createInfoWidget(QString name);
+    void setInterfaceStyle(); //Установка стиля интерфейса
+    void setLabelStyle(); //Установка стиля надписей
+    void setPortraitStyle(); //Установка стиля кнопок
+    void setBtnConnection(); //Установка connect для кнопок
+    void createInfoWidget(QString name); //Создание информационного окна
 
 public slots:
-    void onBtnClicked();
+    void onBtnClicked(); //Формирование информационного окна
 
 protected:
     void paintEvent(QPaintEvent *event);

@@ -1,16 +1,13 @@
 #include "infowidget.h"
 #include "ui_infowidget.h"
 #include <QSqlRecord>
-#include <QTextDocument>
 #include <QLayout>
-#include <QScrollArea>
-#include <QTextEdit>
 
 InfoWidget::InfoWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::InfoWidget)
 {
-    ui->setupUi(this);   
+    ui->setupUi(this);
     ui->textEdit->setReadOnly(true);
 
     editedText = "<html><body>";
@@ -41,6 +38,9 @@ void InfoWidget::createInfo(QString name)
 
     editedText.append("</body></html>");
     setInfo();
+
+    delete model;
+    delete subModel;
 }
 
 void InfoWidget::setInfo()

@@ -23,6 +23,9 @@ Widget::Widget(QWidget *parent)
 
 Widget::~Widget()
 {
+    delete dbManager;
+    delete netManager;
+    delete iw;
     delete ui;
 }
 

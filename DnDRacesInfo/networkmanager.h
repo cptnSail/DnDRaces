@@ -11,10 +11,11 @@ class NetworkManager : public QObject
     Q_OBJECT
 public:
     explicit NetworkManager(QObject *p = 0);
+    ~NetworkManager();
 
 public slots:
-    void getNetData();
-    void setData(QNetworkReply *reply);
+    void getNetData(); //get-запрос
+    void setData(QNetworkReply *reply); //Передача полученных данных в netData и вызов сигнала для передачи данных в класс DataBaseManager
 
 signals:
     void readComplete(QByteArray *ba);

@@ -9,8 +9,11 @@ NetworkManager::NetworkManager(QObject *p)
     connect(manager, &QNetworkAccessManager::finished, this, &NetworkManager::setData);
 
     netData.clear();
+}
 
-    //getNetData();
+NetworkManager::~NetworkManager()
+{
+    delete manager;
 }
 
 

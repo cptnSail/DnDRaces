@@ -5,7 +5,6 @@
 #include <QString>
 #include <QSqlDatabase>
 #include <QSqlQueryModel>
-#include <QTextEdit>
 
 namespace Ui {
 class InfoWidget;
@@ -19,10 +18,11 @@ public:
     explicit InfoWidget(QWidget *parent = nullptr);
     ~InfoWidget();
 
-    void createInfo(QString name);
-    void setInfo();
+    void createInfo(QString name); //Делает выборку из таблиц в соответсвии с полученным именем и формирует текст для нового окна
+    void setInfo(); //Устанавливает сформированный текст в виджет TextEdit
 
-    void editText(QSqlQueryModel *model, bool subrace = false);
+    void editText(QSqlQueryModel *model, bool subrace = false); //Формирует из объекта таблицы удобный для чтения текст
+    //Функции, редактирующие отдельные параметры объекта
     QString editTitle(QString text);
     QString editTraitsTitle(QString text);
     QString editSubDesc(QString text);

@@ -5,6 +5,7 @@
 class StyleHelper
 {
 public:
+    //Настройка интерфейса осноного окна приложения
     static QString getMainWidgetStyle();
     static QString getNameStyle();
     static QString getLabelStyle();
