@@ -35,7 +35,6 @@ void Widget::setInterfaceStyle()
 
     setLabelStyle();
     setPortraitStyle();
-
 }
 
 void Widget::setLabelStyle()
